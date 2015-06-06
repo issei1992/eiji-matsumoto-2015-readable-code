@@ -4,15 +4,18 @@
 #include <vector>
 
 static const int MAX_LINE_LENGTH = 256;
+using namespace std;
 
-void printRecipe(const char* const filename)
+void printRecipe(const char* const filename,int SearchID)
 {
+    
+    int recipeID=1;
     std::ifstream recipe_file(filename);
     if( ! recipe_file.good())
     {
         return;
     }
-
+    
     while(true)
     {
         char recipe_data[MAX_LINE_LENGTH];
@@ -21,12 +24,22 @@ void printRecipe(const char* const filename)
         {
             break;
         }
-        std::cout << recipe_data << std::endl;
+        if (SearchID==0||SearchID==recipeID) {
+            std::cout <<ID<<": "<< recipe_data << std::endl;
+        }
+        recipeID++;
+        
     }
 }
 
 int main(int argc, char* argv[])
 {
-    printRecipe(argv[1]);
+    int SearchID=0;
+    cout<<"指定したいID番号を入力(0で全部表示)"<<" ";
+    cin>>SearchID;
+    
+    printRecipe(argv[1],SearchID);
+    
+    
     return 0;
 }
