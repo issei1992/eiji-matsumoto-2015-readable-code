@@ -21,7 +21,11 @@ void printRecipe(const char* const filename)
 
 ###リーダブルポイント(issei1992による)
 メイン関数内を最小限に少なくしていて、関数名も簡潔なのでまず最初に何をしようとしているのかをすぐに理解できる。
+https://github.com/issei1992/eiji-matsumoto-2015-readable-code/blob/master/Recipe.cpp#L43
+
 最初にconst int MAX_LINE_LENGTH=256;とグローバル変数にわかりやすく明示してある
+https://github.com/issei1992/eiji-matsumoto-2015-readable-code/blob/master/Recipe.cpp#L6
+
 make　でコンパイルができるように設定してあるのですごくコンパイルしやすい。
 
 [気になった点	]
