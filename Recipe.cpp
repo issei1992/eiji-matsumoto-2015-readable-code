@@ -6,7 +6,9 @@
 static const int MAX_LINE_LENGTH = 256;
 using namespace std;
 
-void printRecipe(const char* const filename,int SearchID)
+
+
+void printRecipe(const char* const Username,const char* const filename,int SearchID)
 {
     
     int recipeID=1;
@@ -25,20 +27,20 @@ void printRecipe(const char* const filename,int SearchID)
             break;
         }
         if (SearchID==0||SearchID==recipeID) {
-            std::cout <<ID<<": "<< recipe_data << std::endl;
+            std::cout <<recipeID<<": "<< recipe_data << std::endl;
         }
         recipeID++;
-        
     }
 }
 
 int main(int argc, char* argv[])
 {
+  
     int SearchID=0;
-    cout<<"指定したいID番号を入力(0で全部表示)"<<" ";
+    cout<<"指定したいID番号を入力(0で全表示)"<<" ";
     cin>>SearchID;
-    
-    printRecipe(argv[1],SearchID);
+
+    printRecipe(argv[1],argv[2],SearchID);
     
     
     return 0;
